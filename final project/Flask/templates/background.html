@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href='/static/css/background.css'/>
+        <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="/background">Background</a>
+        <a href="/data">Data</a>
+        <div class="dropdown">
+          <button class="dropbtn">Exploratory Analysis
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="summary_statistics">Summary Statistics</a>
+            <a href="univariate_analysis">Univariate Analysis</a>
+            <a href="/bivariate_analysis">Bivariate Analysis</a>
+            <a href="/feature_corr">Feature Correlation</a>
+          </div>
+        </div>
+        <a href="/model_prediction">Model Prediction</a>
+        <div class="dropdown">
+          <button class="dropbtn">Prediction Result
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="predictknn">Predict KNN</a>
+            <a href="predictrfc">Predict RFC</a>
+          </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </head>
+  <br>
+  <body style="background-color: lavenderblush">
+    <div>​Heart disease is the leading cause of mortality globally, taking approximately 17 million lives each year, also affection 1 in every 4 Americans. 
+      There are numerious risk factors for heart disease: <b>High blood pressure, unhealthy cholesterol levels, diabetes, and other clinical symptoms</b>.
+      <br><br>
+      <img src="/static/images/bp_range.jpg" width="500" height="300">
+      <img src="/static/images/cholesteol_level.jpg" width="500" height="300">
+      <img src="/static/images/bs_levels.jpg" width="500" height="300">
+      <br><br>
+        People with multiple risk factors could be benefited from early detection of the heart disease done by a machine learning model.  
+        Machine learning algorithms, such as <b>K-Nearest Neighbor (KNN) </b>and <b>Random Forest</b> have been used to assists disease prediction and diagnosis.
+      <br><br>  
+    </div>
+  </body>
+  <br><br><br>
+<form action="/">
+    <input type="submit" value="Back to homepage">
+</form>
+</html>
+

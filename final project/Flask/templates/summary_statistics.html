@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href='/static/css/home.css'/>
+    <head>
+        <link rel="stylesheet" href='/static/css/home.css'/>
+        <div class="topnav" id="myTopnav">
+          <a href="/" class="active">Home</a>
+          <a href="/background">Background</a>
+          <a href="/data">Data</a>
+          <div class="dropdown">
+            <button class="dropbtn">Exploratory Analysis
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="summary_statistics">Summary Statistics</a>
+              <a href="univariate_analysis">Univariate Analysis</a>
+              <a href="/bivariate_analysis">Bivariate Analysis</a>
+              <a href="/feature_corr">Feature Correlation</a>
+            </div>
+          </div>
+          <a href="/model_prediction">Model Prediction</a>
+          <div class="dropdown">
+            <button class="dropbtn">Prediction Result
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="predictknn">Predict KNN</a>
+              <a href="predictrfc">Predict RFC</a>
+            </div>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+  
+      <script>
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+  </head>
+  <body style="background-color: lavenderblush">
+    <h1>Summary statistics:</h1>
+    <h3>Summary statistics for no heart disease</h3>
+    <img src="/static/images/No_HD.jpg"width="800" height="200">
+    <br><br>
+    <h3>Summary statistics for heart disease</h3>
+    <img src="/static/images/Yes_HD.jpg"width="800" height="200">
+    <br><br>
+    <h4> The mean age for people who have heart disease is slightly higher than those who do not have heart disease. 
+      <br>
+    Means of resting blood pressures are closed in both outcome groups, while people with heart disease have slightly higher ranges of blood pressures. 
+  <br> Mean cholesterol is higher among those who do not have heart disease.
+</h4> <br>
+    <h1>Checking outliers:</h1>
+    <ul>
+        <li>No outliers in Age</li>
+        <li>There are 28 outliers in RestingBP</li>
+        <li>There are 183 outliers in Cholesterol</li>
+        <li>There are 2 outliers in MaxHR</li>
+        <li>There are 16 outliers in Oldpeak</li>
+    </ul>
+    <h3>Distribution of numerical features with outliers:</h3>
+    <img src="/static/images/with_outliers.jpg"width="1000" height="400">
+    <br>
+    <h4 style="color: crimson">Zero cholesterol seems quite impossible!</h4>
+    <br>
+    <h3>Distribution of numerical features without outliers:</h3>
+    <img src="/static/images/no_outliers.jpg"width="1000" height="400">
+    <br>
+    <h4>After removing the outliers, we could still see that most participants: <br>
+    a. aged in 50 to 60, <br>
+    b. had cholesterol levels around 200, <br>
+    c. experienced tachycardia (Maximum heart rate > 140) and prehypertension (120-139 mmHg), and normal ST depression. </h4>
+    </body>
+    <br><br>
+<form action="/" method="GET">
+    <input type="submit" value="Back to home page">
+</form>
+</html>

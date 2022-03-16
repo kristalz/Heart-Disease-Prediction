@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href='/static/css/home.css'/>
+        <div class="topnav" id="myTopnav">
+          <a href="/" class="active">Home</a>
+          <a href="/background">Background</a>
+          <a href="/data">Data</a>
+          <div class="dropdown">
+            <button class="dropbtn">Exploratory Analysis
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="summary_statistics">Summary Statistics</a>
+              <a href="univariate_analysis">Univariate Analysis</a>
+              <a href="/bivariate_analysis">Bivariate Analysis</a>
+              <a href="/feature_corr">Feature Correlation</a>
+            </div>
+          </div>
+          <a href="/model_prediction">Model Prediction</a>
+		  <div class="dropdown">
+            <button class="dropbtn">Prediction Result
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="predictknn">Predict KNN</a>
+              <a href="predictrfc">Predict RFC</a>
+            </div>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+  
+      <script>
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+    </head>
+
+<body style="background-color: lavenderblush">
+	<h3>Heart Disease Prediction</h3>
+
+<div>
+<form action="/resultknn" method="POST">
+	<label for="age">Age</label>
+	<input type="text" id="age" name="age">btw:[30-99]
+	<br>
+	<br>
+	<label for="sex">Sex</label>
+	<select id="sex" name="sex">
+	<option value="0">F</option>
+	<option value="1">M</option>
+	</select>
+	<br>
+	<br>
+	<label for="chestpaintype">Chest Pain Type</label>
+	<select id="chestpaintype" name="chestpaintype">
+	<option value="0">ASY</option>
+	<option value="1">ATA</option>
+	<option value="2">NAP</option>
+	<option value="3">TA</option>
+	</select>
+	<br>
+	<br>
+	<label for="restingbp">Resting Blood Pressure</label>
+	<input type="text" id="restingbp" name="restingbp">btw:[0-300]
+	<br>
+	<br>
+    <label for="cholesterol">Cholesterol</label>
+	<input type="text" id="cholesterol" name="cholesterol">btw:[0-900]
+    <br>
+	<br>
+	<label for="fastingbs">Fasting Blood Sugar</label>
+	<select id="fastingbs" name="fastingbs">
+	<option value="0">Normal</option>
+	<option value="1">> 120 mg/dl</option>
+	</select>
+	<br>
+	<br>
+	<label for="restingECG">Resting ECG</label>
+	<select id="restingECG" name="restingECG">
+	<option value="0">Normal</option>
+	<option value="1">ST</option>
+	</select>
+	<br>
+	<br>
+	<label for="maxHR">Maximum Heart Rate</label>
+    <input type="text" id="maxHR" name="maxHR">btw:[0-300]
+	<br>
+	<br>
+	<label for="exerciseAngina">Exercise Angina</label>
+	<select id="exerciseAngina" name="exerciseAngina">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+	</select>
+	<br>
+	<br>
+	<label for="old_peak">Old peak</label>
+	<input type="text" id="old_peak" name="old_peak">btw:[0-10.0]
+	<br>
+	<br>
+	<label for="st_slope">ST Slope</label>
+    <select id="st_slope" name="st_slope">
+    <option value="0">Down</option>
+    <option value="1">Flat</option>
+    <option value="2">Up</option>
+    </select>
+	<br>
+	<br>
+	<input type="submit" value="Submit">
+	</form>
+	</div>
+	</body>
+</html>

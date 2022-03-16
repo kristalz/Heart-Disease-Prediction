@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href='/static/css/home.css'/>
+        <div class="topnav" id="myTopnav">
+          <a href="/" class="active">Home</a>
+          <a href="/background">Background</a>
+          <a href="/data">Data</a>
+          <div class="dropdown">
+            <button class="dropbtn">Exploratory Analysis
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="summary_statistics">Summary Statistics</a>
+              <a href="univariate_analysis">Univariate Analysis</a>
+              <a href="/bivariate_analysis">Bivariate Analysis</a>
+              <a href="/feature_corr">Feature Correlation</a>
+            </div>
+          </div>
+          <a href="/model_prediction">Model Prediction</a>
+          <div class="dropdown">
+            <button class="dropbtn">Prediction Result
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="predictknn">Predict KNN</a>
+              <a href="predictrfc">Predict RFC</a>
+            </div>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+  
+      <script>
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+    </head>
+    <body style="background-color: lavenderblush">
+        <h1>The correlation between numerical features:</h1>
+        <h3>Which attribute is most correlated with heart disease?  </h2>
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <div id="chart" class="chart">
+        <script type='text/javascript'>
+            var graphs = {{graphJSON | safe}};
+            Plotly.plot('chart',graphs,{});
+        </script>
+        </div><br>
+        Heart disease is correlated with most features. <br>
+        ST slope, maximum heart rate and chest pain types that could be clinical indications of heart disease are not correlated with heart disease.<br> 
+        Fasting blood sugar is slightly negative correlated with heart disease. <br>
+        The strongest unmodifiable risk factors are age and sex; the strongest modifiable risk factors are exercise angina and ST depression. <br>
+        Blood pressure, cholesterol levels and fasting blood sugar do not have strong collinearity with each other. <br>
+        No strong correlated features in the dataset. 
+    </body>
+    <br><br>     
+<form action="/" method="GET">
+    <input type="submit" value="Back to home page">
+</html>
